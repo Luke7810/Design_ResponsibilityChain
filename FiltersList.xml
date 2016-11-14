@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RESULT>
+	<!-- 所有的过滤器可以在这里指定，使用或是不使用，以及前后顺序 -->
+	<!-- 再有新加的过滤器，只需要实现Filter接口就行了，然后配置到XML中 -->
+	<Filter>
+		<Value>com.luke.design.rc.Filter_1</Value>
+	</Filter>
+	
+	<Filter>
+		<Value>com.luke.design.rc.Filter_2</Value>
+	</Filter>
+	
+</RESULT>
