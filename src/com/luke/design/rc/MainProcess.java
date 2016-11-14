@@ -39,9 +39,19 @@ public class MainProcess {
 								.getFirstChild().getNodeValue()).newInstance());
 			}
 			
+			//模拟HTTP请求，创建一个请求对象和一个返回对象。
+			Request req = new Request();
+			Response reps = new Response();
+			
+			//将要处理的字符串交给请求对象处理。
+			req.setRequestStr(strMain);
+			reps.setResponseStr("response");
+			
 			//使用责任链设计思想，使用所有加载的filter过滤字符串。
-			String strmainResult = fc.doFilter(strMain);
-			System.out.println(strmainResult);
+			fc.doFilter(req, reps, fc);
+			
+			System.out.println(req.getRequestStr());
+			System.out.println(reps.getResponseStr());
 			
 		} catch (Exception e) {
 			e.printStackTrace();
